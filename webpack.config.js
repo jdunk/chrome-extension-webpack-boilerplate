@@ -25,7 +25,7 @@ var options = {
     background: path.join(__dirname, "src", "js", "background.js")
   },
   output: {
-    path: path.join(__dirname, "build"),
+    path: path.join(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
   module: {
@@ -51,8 +51,8 @@ var options = {
     alias: alias
   },
   plugins: [
-    // clean the build folder
-    new CleanWebpackPlugin(["build"]),
+    // clean the dist folder
+    new CleanWebpackPlugin(["dist"]),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(env.NODE_ENV)
